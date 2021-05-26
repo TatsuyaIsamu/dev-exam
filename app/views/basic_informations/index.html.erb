@@ -21,9 +21,9 @@
         <td><%= basic_information.address %></td>
         <td><%= basic_information.age %></td>
         <td><%= basic_information.info %></td>
-        <td><%= link_to 'Show', basic_information %></td>
-        <td><%= link_to 'Edit', edit_basic_information_path(basic_information) %></td>
-        <td><%= link_to 'Destroy', basic_information, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', basic_information %></td>
+        <td><%= link_to '編集', edit_basic_information_path(basic_information) %></td>
+        <td><%= link_to '削除', basic_information, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
