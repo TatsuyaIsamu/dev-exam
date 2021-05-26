@@ -22,7 +22,6 @@ class BasicInformationsController < ApplicationController
   # POST /basic_informations or /basic_informations.json
   def create
     @basic_information = BasicInformation.new(basic_information_params)
-
     respond_to do |format|
       if @basic_information.save
         format.html { redirect_to @basic_information, notice: "Basic information was successfully created." }
@@ -64,6 +63,6 @@ class BasicInformationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def basic_information_params
-      params.fetch(:basic_information, {})
+      params.fetch(:basic_information, {}).permit(:building_name, :rent, :address, :age, :info)
     end
 end
