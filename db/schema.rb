@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_26_041523) do
+ActiveRecord::Schema.define(version: 2021_05_26_064154) do
 
   create_table "basic_informations", force: :cascade do |t|
     t.text "building_name"
@@ -20,6 +20,16 @@ ActiveRecord::Schema.define(version: 2021_05_26_041523) do
     t.text "info"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "nearest_stations", force: :cascade do |t|
+    t.text "route_name"
+    t.text "station_name"
+    t.text "minuites_on_foot"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "basic_information_id"
+    t.index ["basic_information_id"], name: "index_nearest_stations_on_basic_information_id"
   end
 
 end

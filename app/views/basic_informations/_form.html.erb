@@ -21,6 +21,9 @@
   <%= form.label :備考 %>
   <%= form.text_area :info %>
 
+ <% @a.times do |a|%>
+  <%= form.label :juuso%>
+ <% end %>
   <div class="actions">
     <%= form.submit "登録する" %>
   </div>
