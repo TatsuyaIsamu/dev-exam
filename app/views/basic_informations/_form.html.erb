@@ -2,11 +2,10 @@
   <% if @basic_information.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@basic_information.errors.count, "error") %> prohibited this basic_information from being saved:</h2>
-
       <ul>
-      <% @basic_information.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @basic_information.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -20,15 +19,16 @@
   <%= form.text_field :age %>
   <%= form.label :備考 %>
   <%= form.text_area :info %>
-  <% 5.times do%>
+ 
   <%= form.fields_for :nearest_stations do |nearest| %>
+    <h2>最寄り駅<%= nearest.index+1 %></h2>
     <%= form.label :路線名 %>
     <%= nearest.text_field :route_name %>
     <%= form.label :駅名 %>
     <%= nearest.text_field :station_name %>
     <%= form.label :徒歩分数 %>
     <%= nearest.text_field :minuites_on_foot %>
-   <% end %>
+  
   <% end %>
   <div class="actions">
     <%= form.submit "登録する" %>

@@ -1,6 +1,8 @@
 <h1>編集</h1>
 <h2>物件編集</h2>
+
 <%= render 'form'%>
 
 <%= link_to '詳細', @basic_information %> |
+<p><%= link_to "最寄り駅を追加する", station_add_basic_information_path(id: @basic_information) %></p>
 <%= link_to '戻る', basic_informations_path %>
