@@ -20,7 +20,7 @@
   <%= form.text_field :age %>
   <%= form.label :備考 %>
   <%= form.text_area :info %>
-
+  <% 5.times do%>
   <%= form.fields_for :nearest_stations do |nearest| %>
     <%= form.label :路線名 %>
     <%= nearest.text_field :route_name %>
@@ -29,6 +29,7 @@
     <%= form.label :徒歩分数 %>
     <%= nearest.text_field :minuites_on_foot %>
    <% end %>
+  <% end %>
   <div class="actions">
     <%= form.submit "登録する" %>
   </div>

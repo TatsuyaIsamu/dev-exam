@@ -12,6 +12,7 @@ class BasicInformationsController < ApplicationController
 
   # GET /basic_informations/new
   def new
+ 
     @basic_information = BasicInformation.new
     @basic_information.nearest_stations.build
   end
